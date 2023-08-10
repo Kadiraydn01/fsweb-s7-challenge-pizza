@@ -13,15 +13,26 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home-div {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  background-color: rgb(255, 38, 0);
+  color: aliceblue;
+}
+.btn {
+  background-color: yellow;
+  border-radius: 30%;
+  max-width: 8%;
+  margin: auto;
+  padding: 1rem;
+}
+.home-div > img {
+  margin: auto;
+  max-width: 30%;
+  max-height: 20%;
 }
 
 .App-link {
