@@ -1,6 +1,8 @@
 import React from "react";
 import Order2 from "./Order2";
 import Order3 from "./Order3";
+import Ekmalzeme from "./Ekmalzeme";
+import Yorum from "./Yorum";
 
 const Order = () => {
   return (
@@ -36,6 +38,13 @@ const Order = () => {
         <Order2 />
         <Order3 />
       </div>
+      <div className="malzeme-div">
+        <Ekmalzeme />
+      </div>
+      <div>
+        <Yorum />
+      </div>
+      <hr className="hr-class" />
     </>
   );
 };

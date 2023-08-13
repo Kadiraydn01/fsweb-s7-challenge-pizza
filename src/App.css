@@ -57,6 +57,27 @@
   margin-right: 30%;
   text-align: start;
 }
+.ekmalzeme-div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 200px; /* Sütun yüksekliği */
+}
+
+.ekmalzeme-div label {
+  margin: 5px;
+}
+
+.checkbox-group label {
+  flex-basis: calc(20% - 20px); /* 20% genişlik, 20px boşluk */
+  margin: 0;
+}
+
+.malzeme-div {
+  margin-left: 30%;
+  margin-right: 30%;
+  gap: 5rem;
+}
 .boyut {
   justify-content: space-between;
   display: flex;
@@ -65,6 +86,20 @@
 }
 .hdört {
   margin-left: 30%;
+}
+.yorum {
+  margin-top: 20px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+.yorum-input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5%;
+}
+.hr-class {
+  margin-left: 30%;
+  margin-right: 30%;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-link {
