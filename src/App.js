@@ -3,6 +3,7 @@ import Home from "./Home";
 import "./App.css";
 import Success from "./Success";
 import Order from "./Order";
+import Sayac1 from "./Sayac";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <Home />
       <Success />
       <Order />
+      <Sayac1 />
     </>
   );
 };
