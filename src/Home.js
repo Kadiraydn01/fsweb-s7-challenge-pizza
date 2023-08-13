@@ -1,4 +1,5 @@
 import React from "react";
+import resim1 from "./adv-aseets/mvp-banner.png";
 
 const Home = () => {
   return (
@@ -8,10 +9,7 @@ const Home = () => {
       <h2>KOD ACIKTIRIR</h2>
       <h2>PİZZA DOYURUR</h2>
       <button className="btn">ACIKTIM</button>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/330px-Pizza-3007395.jpg"
-        alt="pizza"
-      ></img>
+      <img src={resim1} alt="" />
     </div>
   );
 };
