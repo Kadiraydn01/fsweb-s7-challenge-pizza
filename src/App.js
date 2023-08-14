@@ -2,8 +2,8 @@ import React from "react";
 import Home from "./Home";
 import "./App.css";
 import Success from "./Success";
-import Order from "./Order";
-import Sayac1 from "./Sayac";
+import Order from "./components/Order";
+import Sayac1 from "./components/Sayac";
 
 const App = () => {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import Order2 from "./Order2";
 import Order3 from "./Order3";
 import Ekmalzeme from "./Ekmalzeme";
-import Yorum from "./Yorum";
+import Yorum from "../Yorum";
 
 const Order = () => {
   return (

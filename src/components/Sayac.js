@@ -3,16 +3,19 @@ import { Button } from "reactstrap";
 const Sayac1 = () => {
   const [sayac, setSayac] = useState(0);
   const [fiyat, setFiyat] = useState(0.0);
+  const [boyutlar] = useState([
+    { name: "küçük", price: "84.5" },
+    { name: "orta", price: "104.5" },
+    { name: "büyük", price: "124.5" },
+  ]);
 
   const handleIncrement = () => {
     setSayac(sayac + 1);
-    setFiyat(fiyat + 1.5);
   };
 
   const handleDecrement = () => {
     if (sayac > 0) {
       setSayac(sayac - 1);
-      setFiyat(fiyat - 1.5);
     }
   };
 

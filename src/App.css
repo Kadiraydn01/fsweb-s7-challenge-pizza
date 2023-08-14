@@ -58,10 +58,8 @@
   text-align: start;
 }
 .ekmalzeme-div {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-height: 200px; /* Sütun yüksekliği */
+  display: block;
+  width: 100%;
 }
 
 .ekmalzeme-div label {
@@ -72,7 +70,15 @@
   flex-basis: calc(20% - 20px); /* 20% genişlik, 20px boşluk */
   margin: 0;
 }
-
+.checkbox-group {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 2rem;
+  flex-direction: column;
+  text-align: start;
+}
 .malzeme-div {
   margin-left: 30%;
   margin-right: 30%;
