@@ -1,0 +1,19 @@
+.basari-div {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #ce2829;
+  color: white;
+}
+.basari-h2 {
+  margin-top: 5%;
+  text-align: center;
+}
+.basari-h4 {
+  margin-top: 13%;
+  font-family: "Barlow", sans-serif;
+  font-weight: 200;
+  font-size: 42px;
+
+  text-align: center;
+}

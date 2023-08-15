@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-
+import { useHistory } from "react-router-dom";
+import "../App.css";
 const Order = () => {
   const [sayac, setSayac] = useState(0);
   const [selectedSize, setSelectedSize] = useState("küçük");
@@ -15,6 +16,12 @@ const Order = () => {
   const ekstraMalzemeFiyat = 5;
   const kalınKenarFiyat = 15;
   const inceKenarFiyat = 10;
+
+  const history = useHistory();
+
+  const handleOrder = () => {
+    history.push("/success");
+  };
 
   const handleIncrement = () => {
     setSayac(sayac + 1);
@@ -232,19 +239,21 @@ const Order = () => {
           <div>
             <h3>Sipariş Toplamı</h3>
           </div>
-          <div>
+          <div className="secim">
             <h4>
               Seçimler:
               {ekstraMalzemeToplamFiyat.toFixed(2)} ₺
             </h4>
           </div>
-          <div>
+          <div className="toplam">
             <h4>
               Toplam:
               {toplamFiyat.toFixed(2)} ₺
             </h4>
           </div>
-          <Button className="btn-sayac">SİPARİŞ VER</Button>
+          <Button className="btn-sayac" onClick={handleOrder}>
+            SİPARİŞ VER
+          </Button>
         </div>
       </div>
     </>
