@@ -12,11 +12,8 @@ const Order3 = () => {
         <br />
         <Input id="exampleSelect" name="select" type="select">
           <option>Seçiminiz!</option>
-          <option>İnce</option>
-          <option>Orta</option>
           <option>Kalın Kenar</option>
           <option>İnce Kenar</option>
-          <option>Kalın</option>
         </Input>
       </FormGroup>
     </Form>

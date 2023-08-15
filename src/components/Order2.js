@@ -1,6 +1,12 @@
 import React from "react";
 import { Form, FormGroup, Label, Input } from "reactstrap";
-const Order2 = () => {
+
+const Order2 = ({ selectedSize, onSelectSize }) => {
+  const handleSizeChange = (event) => {
+    const selectedSize = event.target.value;
+    onSelectSize(selectedSize);
+  };
+
   return (
     <Form>
       <FormGroup>
@@ -8,16 +14,40 @@ const Order2 = () => {
           Boyut Seçiniz <span className="yildiz">*</span>{" "}
         </h4>
         <FormGroup check>
-          <Input name="radio1" type="radio" />
-          <Label check>Küçük</Label>
+          <Label check>
+            <Input
+              name="radio1"
+              type="radio"
+              value="küçük"
+              checked={selectedSize === "küçük"}
+              onChange={handleSizeChange}
+            />
+            Küçük
+          </Label>
         </FormGroup>
         <FormGroup check>
-          <Input name="radio1" type="radio" />
-          <Label check>Orta</Label>
+          <Label check>
+            <Input
+              name="radio1"
+              type="radio"
+              value="orta"
+              checked={selectedSize === "orta"}
+              onChange={handleSizeChange}
+            />
+            Orta
+          </Label>
         </FormGroup>
         <FormGroup check>
-          <Input name="radio1" type="radio" />
-          <Label check>Büyük</Label>
+          <Label check>
+            <Input
+              name="radio1"
+              type="radio"
+              value="büyük"
+              checked={selectedSize === "büyük"}
+              onChange={handleSizeChange}
+            />
+            Büyük
+          </Label>
         </FormGroup>
       </FormGroup>
     </Form>

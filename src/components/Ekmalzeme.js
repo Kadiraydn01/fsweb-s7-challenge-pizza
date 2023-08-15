@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { FormGroup, Form, Label, Input } from "reactstrap";
 
 const Ekmalzeme = () => {
+  const [ekstraMalzemeler, setEkstraMalzemeler] = useState([]);
+  const ekstraMalzemeFiyat = 5;
+
+  const toggleEkstraMalzeme = (malzeme) => {
+    if (ekstraMalzemeler.includes(malzeme)) {
+      setEkstraMalzemeler(ekstraMalzemeler.filter((item) => item !== malzeme));
+    } else {
+      setEkstraMalzemeler([...ekstraMalzemeler, malzeme]);
+    }
+  };
+
   return (
     <div class="ekmalzeme-div">
       <h4>Ek Malzemeler</h4>
-      <p>En Fazla 10 malzeme seçebilirsiniz. 5₺</p>
+      <p>En Fazla 10 malzeme seçebilirsiniz. {ekstraMalzemeFiyat}</p>
 
       <Form>
         <div class="checkbox-group">
@@ -61,6 +72,12 @@ const Ekmalzeme = () => {
           </FormGroup>
         </div>
       </Form>
+      <div>
+        <h4>Seçimler</h4>
+        {ekstraMalzemeler.map((malzeme, index) => (
+          <div key={index}>{malzeme}</div>
+        ))}
+      </div>
     </div>
   );
 };
