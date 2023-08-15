@@ -4,14 +4,17 @@ import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 const Order = () => {
   const [sayac, setSayac] = useState(0);
   const [selectedSize, setSelectedSize] = useState("küçük");
+  const [selectedHamur, setSelectedHamur] = useState("kalınKenar");
   const [ekstraMalzemeler, setEkstraMalzemeler] = useState([]);
   const [boyutlar] = useState([
-    { name: "küçük", price: "84.5" },
-    { name: "orta", price: "104.5" },
-    { name: "büyük", price: "124.5" },
+    { name: "küçük", price: 84.5 },
+    { name: "orta", price: 104.5 },
+    { name: "büyük", price: 124.5 },
   ]);
 
   const ekstraMalzemeFiyat = 5;
+  const kalınKenarFiyat = 15;
+  const inceKenarFiyat = 10;
 
   const handleIncrement = () => {
     setSayac(sayac + 1);
@@ -27,13 +30,46 @@ const Order = () => {
     setSelectedSize(event.target.value);
   };
 
+  const toggleEkstraMalzeme = (malzeme) => {
+    if (ekstraMalzemeler.includes(malzeme)) {
+      setEkstraMalzemeler(ekstraMalzemeler.filter((item) => item !== malzeme));
+    } else {
+      setEkstraMalzemeler([...ekstraMalzemeler, malzeme]);
+    }
+  };
+
+  const handleHamurChange = (event) => {
+    setSelectedHamur(event.target.value);
+  };
+
   const selectedSizeObject = boyutlar.find(
     (item) => item.name === selectedSize
   );
-  const boyutFiyat = selectedSizeObject ? selectedSizeObject.price : 0;
-  const ekstraMalzemeToplamFiyat = ekstraMalzemeler.length * ekstraMalzemeFiyat;
-  const toplamFiyat = (boyutFiyat + ekstraMalzemeToplamFiyat) * sayac;
 
+  const boyutFiyat = selectedSizeObject ? selectedSizeObject.price : 0;
+  const hamurFiyat =
+    selectedHamur === "inceKenar" ? inceKenarFiyat : kalınKenarFiyat;
+  const ekstraMalzemeToplamFiyat = ekstraMalzemeler.length * ekstraMalzemeFiyat;
+  const toplamFiyat =
+    (boyutFiyat + ekstraMalzemeToplamFiyat + hamurFiyat) * sayac;
+
+  const ekstraMalzemelerList = [
+    "Pepperoni",
+    "Sosis",
+    "Kanada Jambonu",
+    "Tavuk Jambonu",
+    "Soğan",
+    "Domates",
+    "Mısır",
+    "Sucuk",
+    "Jalepeno",
+    "Sarımsak",
+    "Biber",
+    "Salam",
+    "Ananas",
+    "Kabak",
+    "Turşu",
+  ];
   return (
     <>
       <div className="header1">
@@ -115,10 +151,14 @@ const Order = () => {
               </h4>
             </Label>
             <br />
-            <Input id="exampleSelect" name="select" type="select">
-              <option>Seçiminiz!</option>
-              <option>Kalın Kenar</option>
-              <option>İnce Kenar</option>
+            <Input
+              id="exampleSelect"
+              name="select"
+              type="select"
+              onChange={handleHamurChange}
+            >
+              <option value="inceKenar">İnce Kenar</option>
+              <option value="kalınKenar">Kalın Kenar</option>
             </Input>
           </FormGroup>
         </Form>
@@ -130,56 +170,17 @@ const Order = () => {
 
           <Form>
             <div class="checkbox-group">
-              <FormGroup>
-                <Input id="checkbox1" type="checkbox" />
-                <Label for="checkbox1">Pepperoni</Label>
-
-                <Input id="checkbox2" type="checkbox" />
-                <Label for="checkbox2">Sosis</Label>
-
-                <Input id="checkbox3" type="checkbox" />
-                <Label for="checkbox3">Kanada Jambonu</Label>
-              </FormGroup>
-              <FormGroup>
-                <Input id="checkbox4" type="checkbox" />
-                <Label for="checkbox4">Tavuk Jambonu</Label>
-
-                <Input id="checkbox5" type="checkbox" />
-                <Label for="checkbox5">Soğan</Label>
-
-                <Input id="checkbox6" type="checkbox" />
-                <Label for="checkbox6">Domates</Label>
-              </FormGroup>
-              <FormGroup>
-                <Input id="checkbox7" type="checkbox" />
-                <Label for="checkbox7">Mısır</Label>
-
-                <Input id="checkbox8" type="checkbox" />
-                <Label for="checkbox8">Sucuk</Label>
-
-                <Input id="checkbox9" type="checkbox" />
-                <Label for="checkbox9">Jalepeno</Label>
-              </FormGroup>
-              <FormGroup>
-                <Input id="checkbox10" type="checkbox" />
-                <Label for="checkbox10">Sarımsak</Label>
-
-                <Input id="checkbox11" type="checkbox" />
-                <Label for="checkbox11">Biber</Label>
-
-                <Input id="checkbox12" type="checkbox" />
-                <Label for="checkbox12">Salam</Label>
-              </FormGroup>
-              <FormGroup>
-                <Input id="checkbox13" type="checkbox" />
-                <Label for="checkbox13">Ananas</Label>
-
-                <Input id="checkbox14" type="checkbox" />
-                <Label for="checkbox14">Kabak</Label>
-
-                <Input id="checkbox15" type="checkbox" />
-                <Label for="checkbox15">Turşu</Label>
-              </FormGroup>
+              {ekstraMalzemelerList.map((malzeme) => (
+                <FormGroup key={malzeme}>
+                  <Input
+                    id={`checkbox-${malzeme}`}
+                    type="checkbox"
+                    checked={ekstraMalzemeler.includes(malzeme)}
+                    onChange={() => toggleEkstraMalzeme(malzeme)}
+                  />
+                  <Label for={`checkbox-${malzeme}`}>{malzeme}</Label>
+                </FormGroup>
+              ))}
             </div>
           </Form>
           <div>
