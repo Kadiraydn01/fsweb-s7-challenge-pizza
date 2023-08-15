@@ -4,12 +4,12 @@ import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 const Order = () => {
   const [sayac, setSayac] = useState(0);
   const [selectedSize, setSelectedSize] = useState("küçük");
-  const [selectedHamur, setSelectedHamur] = useState("kalınKenar");
+  const [selectedHamur, setSelectedHamur] = useState("inceKenar");
   const [ekstraMalzemeler, setEkstraMalzemeler] = useState([]);
   const [boyutlar] = useState([
-    { name: "küçük", price: 84.5 },
-    { name: "orta", price: 104.5 },
-    { name: "büyük", price: 124.5 },
+    { name: "küçük", price: 85.5 },
+    { name: "orta", price: 105.5 },
+    { name: "büyük", price: 125.5 },
   ]);
 
   const ekstraMalzemeFiyat = 5;
@@ -166,7 +166,7 @@ const Order = () => {
       <div className="malzeme-div">
         <div class="ekmalzeme-div">
           <h4>Ek Malzemeler</h4>
-          <p>En Fazla 10 malzeme seçebilirsiniz. {ekstraMalzemeFiyat}</p>
+          <p>En Fazla 10 malzeme seçebilirsiniz. {ekstraMalzemeFiyat} ₺</p>
 
           <Form>
             <div class="checkbox-group">
@@ -184,10 +184,10 @@ const Order = () => {
             </div>
           </Form>
           <div>
-            <h4>Seçimler</h4>
+            {/* <h4>Seçimler</h4>
             {ekstraMalzemeler.map((malzeme, index) => (
               <div key={index}>{malzeme}</div>
-            ))}
+            ))} */}
           </div>
         </div>
       </div>
@@ -212,30 +212,38 @@ const Order = () => {
       </div>
       <hr className="hr-class" />
       <div className="sayac-2">
-        <div style={{ display: "flex", flexDirection: "column" }}></div>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <Button className="btn-1" onClick={handleDecrement}>
-            -
-          </Button>
-          <div
-            className="sayac-3"
-            style={{ margin: "0 10px", fontSize: "24px" }}
-          >
-            {sayac}
+        <div className="buolur">
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <Button className="btn-1" onClick={handleDecrement}>
+              -
+            </Button>
+            <div
+              className="sayac-3"
+              style={{ margin: "0 10px", fontSize: "24px" }}
+            >
+              {sayac}
+            </div>
+            <Button className="btn-2" onClick={handleIncrement}>
+              +
+            </Button>
           </div>
-          <Button className="btn-2" onClick={handleIncrement}>
-            +
-          </Button>
         </div>
         <div className="siparis-toplam">
           <div>
             <h3>Sipariş Toplamı</h3>
           </div>
-          <h4>Seçimler</h4>
-          {ekstraMalzemeler.map((malzeme, index) => (
-            <div key={index}>{malzeme}</div>
-          ))}
-          <h4>Toplam: {toplamFiyat.toFixed(2)} ₺</h4>
+          <div>
+            <h4>
+              Seçimler:
+              {ekstraMalzemeToplamFiyat.toFixed(2)} ₺
+            </h4>
+          </div>
+          <div>
+            <h4>
+              Toplam:
+              {toplamFiyat.toFixed(2)} ₺
+            </h4>
+          </div>
           <Button className="btn-sayac">SİPARİŞ VER</Button>
         </div>
       </div>

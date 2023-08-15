@@ -6,8 +6,11 @@ const Home = () => {
     <div className="home-div">
       <h3>Teknolojik Yemekler</h3>
       <br />
-      <h2>KOD ACIKTIRIR</h2>
-      <h2>PİZZA DOYURUR</h2>
+      <h2>
+        KOD ACIKTIRIR <br />
+        PİZZA DOYURUR
+      </h2>
+
       <button className="btn">ACIKTIM</button>
       <img src={resim1} alt="" />
     </div>

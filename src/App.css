@@ -41,6 +41,8 @@
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  background-color: #ce2829;
+  color: white;
 }
 .yildiz {
   color: red;
@@ -75,9 +77,10 @@
   width: 100%;
   flex-wrap: wrap;
   padding: 1rem;
-  gap: 2rem;
+  gap: 1.1rem;
   flex-direction: column;
   text-align: start;
+  height: 200px;
 }
 .malzeme-div {
   margin-left: 30%;
@@ -118,13 +121,19 @@
   background-color: #fdc913;
 }
 .sayac-2 {
-  border: 1px black;
   display: flex;
-  gap: 10rem;
+  gap: 5rem;
   margin-top: 2rem;
   margin-left: 30%;
   margin-right: 30%;
   width: 40%;
+}
+.buolur {
+  border: solid 3px #faf7f2;
+  flex-direction: column;
+  display: flex;
+
+  max-height: 40px;
 }
 .btn-sayac {
   background-color: #fdc913;
@@ -134,7 +143,11 @@
   width: 100%;
 }
 .siparis-toplam {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  border: solid 3px #faf7f2;
+  border-radius: 7%;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-link {
