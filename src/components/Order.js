@@ -14,7 +14,7 @@ const Order = () => {
   ]);
 
   const ekstraMalzemeFiyat = 5;
-  const kalınKenarFiyat = 15;
+  const kalinKenarFiyat = 15;
   const inceKenarFiyat = 10;
 
   const history = useHistory();
@@ -55,7 +55,7 @@ const Order = () => {
 
   const boyutFiyat = selectedSizeObject ? selectedSizeObject.price : 0;
   const hamurFiyat =
-    selectedHamur === "inceKenar" ? inceKenarFiyat : kalınKenarFiyat;
+    selectedHamur === "inceKenar" ? inceKenarFiyat : kalinKenarFiyat;
   const ekstraMalzemeToplamFiyat = ekstraMalzemeler.length * ekstraMalzemeFiyat;
   const toplamFiyat =
     (boyutFiyat + ekstraMalzemeToplamFiyat + hamurFiyat) * sayac;
@@ -79,24 +79,28 @@ const Order = () => {
   ];
   return (
     <>
-      <div className="header1">
-        <h2>Teknolojik Yemekler</h2>
-        <p>
-          Anasayfa - Seçenekler - <strong>Sipariş Oluştur</strong>
-        </p>
+      <div className="header">
+        <div className="header1">
+          <h1>Teknolojik Yemekler</h1>
+        </div>
+        <div className="header1-p">
+          <p>
+            Anasayfa - Seçenekler - <strong>Sipariş Oluştur</strong>
+          </p>
+        </div>
       </div>
       <div>
         <h4 className="hdört">Position Absolute Acı Pizza</h4>
       </div>
       <div className="fiyat">
-        <p>
-          <strong>85.50 ₺ </strong>
+        <p className="fiyat-p">
+          <strong>{boyutFiyat} ₺ </strong>
         </p>
         <p>4.9</p>
         <p>(200)</p>
       </div>
       <div className="aciklama">
-        <p>
+        <p className="aciklama-p">
           Bu pizzamızı yemeyen bin pişman. Gelin bu tadın enfesliğinin sizde
           farkına varın. Dalından taze koparılmış ürünlerimizle kendinizi bu
           tazelikle yenilenmiş hissedeceksiniz. Sonrasında yazdığınız kodlar
@@ -107,7 +111,7 @@ const Order = () => {
         </p>
       </div>
       <div className="boyut">
-        <Form>
+        <Form className="boyut-form">
           <FormGroup>
             <h4>
               Boyut Seçiniz <span className="yildiz">*</span>{" "}
@@ -124,6 +128,7 @@ const Order = () => {
                 Küçük
               </Label>
             </FormGroup>
+            <br />
             <FormGroup check>
               <Label check>
                 <Input
@@ -136,6 +141,7 @@ const Order = () => {
                 Orta
               </Label>
             </FormGroup>
+            <br />
             <FormGroup check>
               <Label check>
                 <Input
@@ -154,7 +160,7 @@ const Order = () => {
           <FormGroup>
             <Label for="exampleSelect">
               <h4>
-                Hamur Seç<span className="yildiz">*</span>
+                Hamur Seç<span className="yildiz"> *</span>
               </h4>
             </Label>
             <br />
@@ -165,7 +171,7 @@ const Order = () => {
               onChange={handleHamurChange}
             >
               <option value="inceKenar">İnce Kenar</option>
-              <option value="kalınKenar">Kalın Kenar</option>
+              <option value="kalinKenar">Kalın Kenar</option>
             </Input>
           </FormGroup>
         </Form>
@@ -219,15 +225,12 @@ const Order = () => {
       </div>
       <hr className="hr-class" />
       <div className="sayac-2">
-        <div className="buolur">
+        <div>
           <div style={{ display: "flex", alignItems: "center" }}>
             <Button className="btn-1" onClick={handleDecrement}>
               -
             </Button>
-            <div
-              className="sayac-3"
-              style={{ margin: "0 10px", fontSize: "24px" }}
-            >
+            <div className="sayac-3" style={{ fontSize: "32px" }}>
               {sayac}
             </div>
             <Button className="btn-2" onClick={handleIncrement}>
@@ -236,24 +239,21 @@ const Order = () => {
           </div>
         </div>
         <div className="siparis-toplam">
-          <div>
+          <div className="toplam2">
             <h3>Sipariş Toplamı</h3>
           </div>
           <div className="secim">
-            <h4>
-              Seçimler:
-              {ekstraMalzemeToplamFiyat.toFixed(2)} ₺
-            </h4>
+            <h4>Seçimler</h4>
+            <h4>{ekstraMalzemeToplamFiyat.toFixed(2)} ₺</h4>
           </div>
           <div className="toplam">
-            <h4>
-              Toplam:
-              {toplamFiyat.toFixed(2)} ₺
-            </h4>
+            <h4>Toplam </h4>
+            <h4>{toplamFiyat.toFixed(2)} ₺</h4>
           </div>
           <Button className="btn-sayac" onClick={handleOrder}>
             SİPARİŞ VER
           </Button>
+          <br />
         </div>
       </div>
     </>
