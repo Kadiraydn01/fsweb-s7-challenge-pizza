@@ -3,9 +3,9 @@ import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { useHistory } from "react-router-dom";
 import "../App.css";
 const Order = () => {
-  const [sayac, setSayac] = useState(0);
+  const [sayac, setSayac] = useState(1);
   const [selectedSize, setSelectedSize] = useState("küçük");
-  const [selectedHamur, setSelectedHamur] = useState("inceKenar");
+  const [selectedHamur, setSelectedHamur] = useState("secimYapin");
   const [ekstraMalzemeler, setEkstraMalzemeler] = useState([]);
   const [boyutlar] = useState([
     { name: "küçük", price: 85.5 },
@@ -55,7 +55,11 @@ const Order = () => {
 
   const boyutFiyat = selectedSizeObject ? selectedSizeObject.price : 0;
   const hamurFiyat =
-    selectedHamur === "inceKenar" ? inceKenarFiyat : kalinKenarFiyat;
+    selectedHamur === "inceKenar"
+      ? inceKenarFiyat
+      : selectedHamur === "kalinKenar"
+      ? kalinKenarFiyat
+      : 0;
   const ekstraMalzemeToplamFiyat = ekstraMalzemeler.length * ekstraMalzemeFiyat;
   const toplamFiyat =
     (boyutFiyat + ekstraMalzemeToplamFiyat + hamurFiyat) * sayac;
@@ -170,6 +174,7 @@ const Order = () => {
               type="select"
               onChange={handleHamurChange}
             >
+              <option value="secimYapin">Seçim Yapınız</option>
               <option value="inceKenar">İnce Kenar</option>
               <option value="kalinKenar">Kalın Kenar</option>
             </Input>
