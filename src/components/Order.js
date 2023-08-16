@@ -118,7 +118,7 @@ const Order = () => {
         <Form className="boyut-form">
           <FormGroup>
             <h4>
-              Boyut Seçiniz <span className="yildiz">*</span>{" "}
+              Boyut Seçiniz <span className="yildiz">*</span>
             </h4>
             <FormGroup check>
               <Label check>
