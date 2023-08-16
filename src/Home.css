@@ -94,6 +94,13 @@
   margin-top: 3rem;
   margin-left: 2rem;
 }
+.menu-aciklama {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
 .ikon-2 {
   display: flex;
   flex-direction: row;
@@ -101,4 +108,63 @@
   margin-left: 17%;
   margin-right: 17%;
   margin-top: 1rem;
+}
+.ikon-2 > button {
+  display: flex;
+  background-color: white;
+  border-radius: 15px;
+  width: 130px;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
+}
+
+.yemek-menu {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  justify-content: center;
+}
+
+.terminal {
+  border: solid 2px black;
+  width: 360px;
+}
+.terminal > img {
+  display: flex;
+  margin: 1.5rem;
+}
+.terminal > h4 {
+  margin-top: 3rem;
+  margin-left: 1rem;
+}
+
+.absolute {
+  width: 360px;
+  border: solid 2px black;
+}
+.absolute > img {
+  margin: 1.5rem;
+}
+.absolute > h4 {
+  margin-left: 1rem;
+}
+.tavuklu {
+  width: 360px;
+  border: solid 2px black;
+}
+.tavuklu > img {
+  margin: 1.5rem;
+}
+.tavuklu > h4 {
+  margin-left: 1rem;
+}
+
+.abs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem;
 }

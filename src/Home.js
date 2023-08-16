@@ -5,6 +5,9 @@ import resim1 from "./adv-aseets/mvp-banner.png";
 import resim2 from "./adv-aseets/kart-1.png";
 import resim3 from "./adv-aseets/kart-2.png";
 import resim4 from "./adv-aseets/kart-3.png";
+import resim5 from "./adv-aseets/food-1.png";
+import resim6 from "./adv-aseets/food-2.png";
+import resim7 from "./adv-aseets/food-3.png";
 import ikon from "./adv-aseets/icons/1.svg";
 import ikon1 from "./adv-aseets/icons/2.svg";
 import ikon2 from "./adv-aseets/icons/3.svg";
@@ -107,20 +110,74 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div className="menu-aciklama">
+        <h5>en çok paketlenen menüler</h5>
+        <h3>Acıktıran Kodlara Doyuran Lezzetler</h3>
+      </div>
       <div>
         <div className="ikon-2">
-          <img src={ikon} alt=""></img>
-          <p>Ramen</p>
-          <img src={ikon1} alt=""></img>
-          <p>Pizza</p>
-          <img src={ikon2} alt=""></img>
-          <p>Burger</p>
-          <img src={ikon3} alt=""></img>
-          <p>French fries</p>
-          <img src={ikon4} alt=""></img>
-          <p>Fast Food</p>
-          <img src={ikon5} alt=""></img>
-          <p>Soft drinks</p>
+          <button>
+            <img src={ikon} alt=""></img>
+            <p>Ramen</p>
+          </button>
+          <button className="siyah">
+            <img src={ikon1} alt=""></img>
+            <p>Pizza</p>
+          </button>
+          <button>
+            <img src={ikon2} alt=""></img>
+            <p>Burger</p>
+          </button>
+          <button>
+            <img src={ikon3} alt=""></img>
+            <p>French fries</p>
+          </button>
+          <button>
+            <img src={ikon4} alt=""></img>
+            <p>Fast Food</p>
+          </button>
+          <button>
+            <img src={ikon5} alt=""></img>
+            <p>Soft drinks</p>
+          </button>
+        </div>
+      </div>
+      <div className="yemek-menu">
+        <div className="terminal">
+          <img src={resim5} alt=""></img>
+
+          <h4>Terminal Pizza</h4>
+          <div className="abs">
+            <p>4.9</p>
+            <p>(200)</p>
+            <p>
+              <strong>80₺ </strong>
+            </p>
+          </div>
+        </div>
+
+        <div className="absolute">
+          <img src={resim6} alt=""></img>
+          <h4>Position Absolute Acı Pizza</h4>
+          <div className="abs">
+            <p>4.9</p>
+            <p>(920)</p>
+            <p>
+              <strong>85 ₺ </strong>
+            </p>
+          </div>
+        </div>
+
+        <div className="tavuklu">
+          <img src={resim7} alt=""></img>
+          <h4>useEffect Tavuklu Burger</h4>
+          <div className="abs">
+            <p>4.9</p>
+            <p>(462)</p>
+            <p>
+              <strong>75 ₺ </strong>
+            </p>
+          </div>
         </div>
       </div>
     </>
