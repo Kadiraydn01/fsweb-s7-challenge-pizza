@@ -200,12 +200,12 @@ const Order = () => {
         </Form>
       </div>
       <div className="malzeme-div">
-        <div class="ekmalzeme-div">
+        <div className="ekmalzeme-div">
           <h4>Ek Malzemeler</h4>
           <p>En Fazla 10 malzeme seçebilirsiniz. {ekstraMalzemeFiyat} ₺</p>
 
           <Form>
-            <div class="checkbox-group">
+            <div className="checkbox-group">
               {ekstraMalzemelerList.map((malzeme) => (
                 <FormGroup key={malzeme}>
                   <Input
