@@ -95,7 +95,7 @@ Not - Form'un payloadu, veri **örnek olarak** şu şekilde olabilir. **Kendiniz
 
 ```
 {
-    isim: string,
+isim: string,
 boyut: string,
 malzeme1: bool,
 malzeme2: bool,
@@ -170,16 +170,16 @@ MVP'yi bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki 
 | CSS flex becerisi ortalama ve hizalamalar doğru mu?                                       |          |
 | HTML yapısı anlamlı mı? Semantik tagler kullanılmış mı?                                   |          |
 | Projedeki MVP seviye tasarıma benzerlik (1-5)                                             |          |
-| ADV seviye Sipariş Onay sayfası uygulanmış mı?                                            | ADV    |
-| ADV seviye Sipariş Formu uygulanmış mı?                                                   | ADV    |
-| ADV seviye Anasayfa sayfası uygulanmış mı?                                                | ADV    |
-| ADV Seviye uyarlama kabiliyeti (1-5)                                                      | ADV    |
+| ADV seviye Sipariş Onay sayfası uygulanmış mı?                                            | ADV      |
+| ADV seviye Sipariş Formu uygulanmış mı?                                                   | ADV      |
+| ADV seviye Anasayfa sayfası uygulanmış mı?                                                | ADV      |
+| ADV Seviye uyarlama kabiliyeti (1-5)                                                      | ADV      |
 |                                                                                           |          |
 | React JS                                                                                  |          |
 | İçerik componentlere bölünmüş mü?                                                         |          |
 | Prop/export/import gibi React JS özellikleri kullanılmış mı?                              |          |
 | Kodda Türkçe karakter olmamasına dikkat edilmiş mi?                                       |          |
-| Temel paketler dışında ek bir paket kullanılmış mı? (Axios, Tailwind)                     | ADV    |
+| Temel paketler dışında ek bir paket kullanılmış mı? (Axios, Tailwind)                     | ADV      |
 | Genel React JS anlayışı (1-5)                                                             |          |
 |                                                                                           |          |
 | Routing                                                                                   |          |
@@ -206,12 +206,12 @@ MVP'yi bitirdikten sonra çalışmanı daha da ileri götürebilirsin. Buradaki 
 | Veriler state'te tutuluyor mu?                                                            |          |
 | Tüm form değerleri state'e ekleniyor mu?                                                  |          |
 | Tekrar eden bileşenler için map kullanmış mı?                                             |          |
-| Kullandığı verileri, axios ve mock bir API'ye atıp, response'u kullanıyor mu?             | ADV    |
+| Kullandığı verileri, axios ve mock bir API'ye atıp, response'u kullanıyor mu?             | ADV      |
 |                                                                                           |          |
 | Cypress Testleri                                                                          |          |
 | Kaç test yazılmış? (min 3)                                                                |          |
 | Validation kuralları test ediliyor mu?                                                    |          |
 | Her alan test ediliyor mu?                                                                |          |
-| Anasayfa'dan başlayıp, başarılı sipariş gönderimine giden bir test var mı?                | ADV    |
+| Anasayfa'dan başlayıp, başarılı sipariş gönderimine giden bir test var mı?                | ADV      |
 |                                                                                           |          |
 | Soru-Cevap Sorular                                                                        |          |

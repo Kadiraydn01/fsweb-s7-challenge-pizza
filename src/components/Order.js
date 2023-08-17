@@ -193,8 +193,8 @@ const Order = () => {
               onChange={handleHamurChange}
             >
               <option value="secimYapin">Seçim Yapınız</option>
-              <option value="inceKenar">İnce Kenar</option>
-              <option value="kalinKenar">Kalın Kenar</option>
+              <option value="inceKenar">İnce Kenar 10 ₺</option>
+              <option value="kalinKenar">Kalın Kenar 15₺</option>
             </Input>
           </FormGroup>
         </Form>
@@ -219,12 +219,6 @@ const Order = () => {
               ))}
             </div>
           </Form>
-          <div>
-            {/* <h4>Seçimler</h4>
-            {ekstraMalzemeler.map((malzeme, index) => (
-              <div key={index}>{malzeme}</div>
-            ))} */}
-          </div>
         </div>
       </div>
       <div>
