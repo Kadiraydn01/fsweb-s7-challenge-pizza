@@ -63,185 +63,187 @@ const Home = () => {
         <img src={ikon5} alt=""></img>
         <p>Gazlı İçecek</p>
       </div>
-      <div className="sol-taraf">
-        <div
-          className="ilk-resim"
-          style={{
-            backgroundImage: `url(${resim2})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
-            height: 416,
-            width: 520,
-          }}
-        >
-          <h1>
-            Özel <br /> Lezzetus
-          </h1>
-          <p>Position Absolute Acı Burger</p>
-          <button className="siparis " onClick={handleAciktimClick}>
-            SİPARİŞ VER
-          </button>
-        </div>
-        <div className="sag-taraf">
+      <div className="orta-kisim">
+        <div className="sol-taraf">
           <div
-            className="ikinci-resim"
+            className="ilk-resim"
             style={{
-              backgroundImage: `url(${resim3})`,
+              backgroundImage: `url(${resim2})`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
-              height: 200,
-              width: 600,
+              height: 416,
+              width: 520,
             }}
           >
-            <h3>
-              Hackathlon <br /> Burger Menü
-            </h3>
-            <button className="siparis " onClick={handleAciktimClick}>
-              SİPARİŞ VER
-            </button>
-          </div>
-          <div
-            className="ücüncü-resim"
-            style={{
-              backgroundImage: `url(${resim4})`,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "contain",
-              height: 200,
-              width: 600,
-            }}
-          >
-            <h3>
-              <span className="yildiz">Çooook </span>hızlı
-              <br /> npm gibi kurye
-            </h3>
-            <button className="siparis " onClick={handleAciktimClick}>
-              SİPARİŞ VER
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="menu-aciklama">
-        <h5>en çok paketlenen menüler</h5>
-        <h3>Acıktıran Kodlara Doyuran Lezzetler</h3>
-      </div>
-      <div>
-        <div className="ikon-2">
-          <button>
-            <img src={ikon} alt=""></img>
-            <p>Ramen</p>
-          </button>
-          <button className="siyah">
-            <img src={ikon1} alt=""></img>
-            <p>Pizza</p>
-          </button>
-          <button>
-            <img src={ikon2} alt=""></img>
-            <p>Burger</p>
-          </button>
-          <button>
-            <img src={ikon3} alt=""></img>
-            <p>French fries</p>
-          </button>
-          <button>
-            <img src={ikon4} alt=""></img>
-            <p>Fast Food</p>
-          </button>
-          <button>
-            <img src={ikon5} alt=""></img>
-            <p>Soft drinks</p>
-          </button>
-        </div>
-      </div>
-      <div className="yemek-menu">
-        <div className="terminal">
-          <img src={resim5} alt=""></img>
-
-          <h4>Terminal Pizza</h4>
-          <div className="abs">
-            <p>4.9</p>
-            <p>(200)</p>
-            <p>
-              <strong>80₺ </strong>
-            </p>
-          </div>
-        </div>
-
-        <div className="absolute">
-          <img src={resim6} alt=""></img>
-          <h4>Position Absolute Acı Pizza</h4>
-          <div className="abs">
-            <p>4.9</p>
-            <p>(920)</p>
-            <p>
-              <strong>85 ₺ </strong>
-            </p>
-          </div>
-        </div>
-
-        <div className="tavuklu">
-          <img src={resim7} alt=""></img>
-          <h4>useEffect Tavuklu Burger</h4>
-          <div className="abs">
-            <p>4.9</p>
-            <p>(462)</p>
-            <p>
-              <strong>75 ₺ </strong>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="alt-kisim">
-        <div className="düzen">
-          <h1>
-            Teknolojik <br />
-            Yemekler
-          </h1>
-          <div className="düzen-1">
-            <img className="ikon-1" src={ikon6} alt=""></img>
-            <p>
-              34890 Kaynarca Mah. <br />
-              Istanbul Türkiye
-            </p>
-          </div>
-          <div className="düzen-1">
-            <img className="ikon-1" src={ikon7} alt=""></img>
-            <p>aciktim@teknolojikyemekler.com</p>
-          </div>
-          <div className="düzen-1">
-            <img className="ikon-1" src={ikon8} alt=""></img>
-            <p>+90 216 123 45 67</p>
-          </div>
-        </div>
-        <div className="alt-menu">
-          <h2>Sıccacık Menuler</h2>
-          <br />
-          <div>
-            <p>Terminal Pizza </p>
-            <p>5 Kişilik Hackathlon Pizza</p>
-            <p>useEffect Tavuklu Pizza</p>
-            <p>Beyaz Console Fosty</p>
-            <p>Testler Geçti Mutlu Burger</p>
+            <h1>
+              Özel <br /> Lezzetus
+            </h1>
             <p>Position Absolute Acı Burger</p>
+            <button className="siparis " onClick={handleAciktimClick}>
+              SİPARİŞ VER
+            </button>
+          </div>
+          <div className="sag-taraf">
+            <div
+              className="ikinci-resim"
+              style={{
+                backgroundImage: `url(${resim3})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "contain",
+                height: 200,
+                width: 600,
+              }}
+            >
+              <h3>
+                Hackathlon <br /> Burger Menü
+              </h3>
+              <button className="siparis " onClick={handleAciktimClick}>
+                SİPARİŞ VER
+              </button>
+            </div>
+            <div
+              className="ücüncü-resim"
+              style={{
+                backgroundImage: `url(${resim4})`,
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "contain",
+                height: 200,
+                width: 600,
+              }}
+            >
+              <h3>
+                <span className="yildiz">Çooook </span>hızlı
+                <br /> npm gibi kurye
+              </h3>
+              <button className="siparis " onClick={handleAciktimClick}>
+                SİPARİŞ VER
+              </button>
+            </div>
           </div>
         </div>
-        <div className="ikon-3">
-          <h3>Instagram</h3>
-          <div className="alt-ikon">
-            <img src={resim8} alt=""></img>
-            <img src={resim9} alt=""></img>
-            <img src={resim10} alt=""></img>
-            <br />
-            <img src={resim11} alt=""></img>
-            <img src={resim12} alt=""></img>
-            <img src={resim13} alt=""></img>
+        <div className="menu-aciklama">
+          <h5>en çok paketlenen menüler</h5>
+          <h3>Acıktıran Kodlara Doyuran Lezzetler</h3>
+        </div>
+        <div>
+          <div className="ikon-2">
+            <button>
+              <img src={ikon} alt=""></img>
+              <p>Ramen</p>
+            </button>
+            <button className="siyah">
+              <img src={ikon1} alt=""></img>
+              <p>Pizza</p>
+            </button>
+            <button>
+              <img src={ikon2} alt=""></img>
+              <p>Burger</p>
+            </button>
+            <button>
+              <img src={ikon3} alt=""></img>
+              <p>French fries</p>
+            </button>
+            <button>
+              <img src={ikon4} alt=""></img>
+              <p>Fast Food</p>
+            </button>
+            <button>
+              <img src={ikon5} alt=""></img>
+              <p>Soft drinks</p>
+            </button>
+          </div>
+        </div>
+        <div className="yemek-menu">
+          <div className="terminal">
+            <img src={resim5} alt=""></img>
+
+            <h4>Terminal Pizza</h4>
+            <div className="abs">
+              <p>4.9</p>
+              <p>(200)</p>
+              <p>
+                <strong>80₺ </strong>
+              </p>
+            </div>
+          </div>
+
+          <div className="absolute">
+            <img src={resim6} alt=""></img>
+            <h4>Position Absolute Acı Pizza</h4>
+            <div className="abs">
+              <p>4.9</p>
+              <p>(920)</p>
+              <p>
+                <strong>85 ₺ </strong>
+              </p>
+            </div>
+          </div>
+
+          <div className="tavuklu">
+            <img src={resim7} alt=""></img>
+            <h4>useEffect Tavuklu Burger</h4>
+            <div className="abs">
+              <p>4.9</p>
+              <p>(462)</p>
+              <p>
+                <strong>75 ₺ </strong>
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <hr className="hr-class-1" />
-      <div>
-        <div>
+      <div className="alt-kisim-1">
+        <div className="alt-kisim">
+          <div className="düzen">
+            <h1>
+              Teknolojik <br />
+              Yemekler
+            </h1>
+            <div className="düzen-1">
+              <img className="ikon-1" src={ikon6} alt=""></img>
+              <p>
+                34890 Kaynarca Mah. <br />
+                Istanbul Türkiye
+              </p>
+            </div>
+            <div className="düzen-1">
+              <img className="ikon-1" src={ikon7} alt=""></img>
+              <p>aciktim@teknolojikyemekler.com</p>
+            </div>
+            <div className="düzen-1">
+              <img className="ikon-1" src={ikon8} alt=""></img>
+              <p>+90 216 123 45 67</p>
+            </div>
+          </div>
+          <div className="alt-menu">
+            <h2>Sıccacık Menuler</h2>
+            <br />
+            <div>
+              <p>Terminal Pizza </p>
+              <p>5 Kişilik Hackathlon Pizza</p>
+              <p>useEffect Tavuklu Pizza</p>
+              <p>Beyaz Console Fosty</p>
+              <p>Testler Geçti Mutlu Burger</p>
+              <p>Position Absolute Acı Burger</p>
+            </div>
+          </div>
+          <div className="ikon-3">
+            <h3>Instagram</h3>
+            <div className="alt-ikon">
+              <img src={resim8} alt=""></img>
+              <img src={resim9} alt=""></img>
+              <img src={resim10} alt=""></img>
+              <br />
+              <img src={resim11} alt=""></img>
+              <img src={resim12} alt=""></img>
+              <img src={resim13} alt=""></img>
+            </div>
+          </div>
+        </div>
+        <hr className="hr-class-1" />
+
+        <div className="footer">
           <p>@2023 Teknolojik Yemekler</p>
-          <FontAwesomeIcon icon="fa-brands fa-twitter" size="sm" />
         </div>
       </div>
     </>
