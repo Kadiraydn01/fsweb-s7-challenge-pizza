@@ -67,9 +67,9 @@ const Order = () => {
 
   const boyutFiyat = selectedSizeObject ? selectedSizeObject.price : 0;
   const hamurFiyat =
-    selectedHamur === "inceKenar"
+    selectedHamur === "İnce Kenar"
       ? inceKenarFiyat
-      : selectedHamur === "kalinKenar"
+      : selectedHamur === "Kalın Kenar"
       ? kalinKenarFiyat
       : 0;
   const ekstraMalzemeToplamFiyat = ekstraMalzemeler.length * ekstraMalzemeFiyat;
@@ -193,8 +193,8 @@ const Order = () => {
               onChange={handleHamurChange}
             >
               <option value="secimYapin">Seçim Yapınız</option>
-              <option value="inceKenar">İnce Kenar 10 ₺</option>
-              <option value="kalinKenar">Kalın Kenar 15₺</option>
+              <option value="İnce Kenar">İnce Kenar 10 ₺</option>
+              <option value="Kalın Kenar">Kalın Kenar 15₺</option>
             </Input>
           </FormGroup>
         </Form>
