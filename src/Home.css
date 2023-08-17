@@ -168,3 +168,52 @@
   justify-content: space-between;
   margin: 1rem;
 }
+.alt-kisim-1 {
+  background-color: black;
+  color: white;
+}
+.alt-kisim {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.düzen {
+  display: flex;
+  flex-direction: column;
+  margin-left: 7%;
+  text-align: center;
+}
+.düzen-1 {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 1rem;
+}
+.ikon-1 {
+  width: 30px;
+  height: 30px;
+}
+.alt-menu {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  margin-bottom: 2%;
+  width: 420px;
+}
+.alt-ikon {
+  width: 285px;
+}
+.ikon-3 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  width: 400px;
+  height: 260px;
+}
+
+.hr-class-1 {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  color: white;
+}
