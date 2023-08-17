@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { useHistory } from "react-router-dom";
 import "../App.css";
+import resim0 from "../adv-aseets/adv-form-banner.png";
 const Order = () => {
   const [sayac, setSayac] = useState(1);
   const [selectedSize, setSelectedSize] = useState("küçük");
@@ -83,13 +84,17 @@ const Order = () => {
   ];
   return (
     <>
-      <div className="header">
+      <div>
         <div className="header1">
           <h1>Teknolojik Yemekler</h1>
         </div>
+        <div className="header-photo">
+          <img src={resim0} alt=""></img>
+        </div>
         <div className="header1-p">
           <p>
-            Anasayfa - Seçenekler - <strong>Sipariş Oluştur</strong>
+            Anasayfa - Seçenekler -{" "}
+            <span className="yildiz">Sipariş Oluştur</span>
           </p>
         </div>
       </div>
@@ -171,6 +176,8 @@ const Order = () => {
             <Input
               id="exampleSelect"
               name="select"
+              bsSize="lg"
+              className="mb-3"
               type="select"
               onChange={handleHamurChange}
             >
@@ -222,6 +229,18 @@ const Order = () => {
                 id="exampleText"
                 name="text"
                 placeholder="Siparişine eklemek istediğin bir not var mı?"
+                type="textarea"
+              />
+            </FormGroup>
+            <FormGroup>
+              <Label for="exampleText">
+                <h3>Adres Bilgilerini Giriniz</h3>
+              </Label>
+              <Input
+                className="yorum-input"
+                id="exampleText"
+                name="text"
+                placeholder="Adres giriniz!"
                 type="textarea"
               />
             </FormGroup>

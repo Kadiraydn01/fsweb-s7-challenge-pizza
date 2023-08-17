@@ -4,6 +4,12 @@
 .header {
   background-color: #ce2829;
 }
+.header-photo {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  margin-bottom: 40px;
+}
 .header1 {
   display: flex;
   text-align: center;
@@ -13,8 +19,8 @@
 }
 .header1-p {
   margin-left: 30%;
-  background-color: #ce2829;
-  color: white;
+
+  color: black;
   padding-bottom: 1rem;
 }
 .yildiz {
