@@ -3,15 +3,16 @@ import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { useHistory } from "react-router-dom";
 import "../App.css";
 import resim0 from "../adv-aseets/adv-form-banner.png";
+import Footer1 from "./Footer";
 const Order = () => {
   const [sayac, setSayac] = useState(1);
-  const [selectedSize, setSelectedSize] = useState("küçük");
+  const [selectedSize, setSelectedSize] = useState("M");
   const [selectedHamur, setSelectedHamur] = useState("secimYapin");
   const [ekstraMalzemeler, setEkstraMalzemeler] = useState([]);
   const [boyutlar] = useState([
-    { name: "küçük", price: 85.5 },
-    { name: "orta", price: 105.5 },
-    { name: "büyük", price: 125.5 },
+    { name: "M", price: 85.5 },
+    { name: "L", price: 105.5 },
+    { name: "XL", price: 125.5 },
   ]);
 
   const ekstraMalzemeFiyat = 5;
@@ -21,7 +22,17 @@ const Order = () => {
   const history = useHistory();
 
   const handleOrder = () => {
-    history.push("/success");
+    const orderData = {
+      selectedSize,
+      selectedHamur,
+      ekstraMalzemeler,
+      ekstraMalzemeToplamFiyat,
+      toplamFiyat,
+    };
+    history.push({
+      pathname: "/success",
+      state: { orderData },
+    });
   };
 
   const handleIncrement = () => {
@@ -130,11 +141,11 @@ const Order = () => {
                 <Input
                   name="radio1"
                   type="radio"
-                  value="küçük"
-                  checked={selectedSize === "küçük"}
+                  value="M"
+                  checked={selectedSize === "M"}
                   onChange={handleSizeChange}
                 />
-                Küçük
+                M
               </Label>
             </FormGroup>
             <br />
@@ -143,11 +154,11 @@ const Order = () => {
                 <Input
                   name="radio1"
                   type="radio"
-                  value="orta"
-                  checked={selectedSize === "orta"}
+                  value="L"
+                  checked={selectedSize === "L"}
                   onChange={handleSizeChange}
                 />
-                Orta
+                L
               </Label>
             </FormGroup>
             <br />
@@ -156,11 +167,11 @@ const Order = () => {
                 <Input
                   name="radio1"
                   type="radio"
-                  value="büyük"
-                  checked={selectedSize === "büyük"}
+                  value="XL"
+                  checked={selectedSize === "XL"}
                   onChange={handleSizeChange}
                 />
-                Büyük
+                XL
               </Label>
             </FormGroup>
           </FormGroup>
@@ -280,6 +291,7 @@ const Order = () => {
           <br />
         </div>
       </div>
+      <Footer1 />
     </>
   );
 };
