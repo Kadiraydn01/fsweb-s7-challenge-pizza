@@ -240,13 +240,13 @@ const Order = () => {
             </FormGroup>
             <FormGroup>
               <Label for="exampleText">
-                <h3>Adres Bilgilerini Giriniz</h3>
+                <h3>İsim-Soyisim-Adres Bilgilerini Giriniz</h3>
               </Label>
               <Input
                 className="yorum-input"
                 id="exampleText"
                 name="text"
-                placeholder="Adres giriniz!"
+                placeholder="Bilgileri giriniz!"
                 type="textarea"
               />
             </FormGroup>
