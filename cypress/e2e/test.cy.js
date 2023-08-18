@@ -19,7 +19,7 @@ describe("Order Component", () => {
     cy.get(
       "textarea[placeholder='Siparişine eklemek istediğin bir not var mı?']"
     ).type("Ekstra acı olsun lütfen.");
-    cy.get("textarea[placeholder='Adres giriniz!']").type(
+    cy.get("textarea[placeholder='Bilgileri giriniz!']").type(
       "Örnek Mahallesi, Örnek Sokak No: 123"
     );
 
