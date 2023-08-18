@@ -8,7 +8,6 @@ import resim4 from "./adv-aseets/kart-3.png";
 import resim5 from "./adv-aseets/food-1.png";
 import resim6 from "./adv-aseets/food-2.png";
 import resim7 from "./adv-aseets/food-3.png";
-
 import ikon from "./adv-aseets/icons/1.svg";
 import ikon1 from "./adv-aseets/icons/2.svg";
 import ikon2 from "./adv-aseets/icons/3.svg";

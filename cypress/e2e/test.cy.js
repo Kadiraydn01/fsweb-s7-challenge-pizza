@@ -11,7 +11,7 @@ describe("Order Component", () => {
     cy.visit("http://localhost:3000/Order");
     cy.get("input[value='M']").check();
 
-    cy.get("#exampleSelect").select("inceKenar");
+    cy.get("#exampleSelect").select("İnce Kenar");
 
     cy.get(`#checkbox-Pepperoni`).check();
     cy.get(`#checkbox-Sosis`).check();

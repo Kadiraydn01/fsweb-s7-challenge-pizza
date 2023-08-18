@@ -29,6 +29,7 @@ const Order = () => {
       ekstraMalzemeToplamFiyat,
       toplamFiyat,
     };
+
     history.push({
       pathname: "/success",
       state: { orderData },
