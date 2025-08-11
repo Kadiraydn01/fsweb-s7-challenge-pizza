@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, FormGroup, Label, Input } from "reactstrap";
+import "./ModernOrder.css";
 
 const Order2 = ({ selectedSize, onSelectSize }) => {
   const handleSizeChange = (event) => {
@@ -7,50 +7,45 @@ const Order2 = ({ selectedSize, onSelectSize }) => {
     onSelectSize(selectedSize);
   };
 
+  const boyutlar = [
+    { name: "küçük", price: "65₺", description: "20cm" },
+    { name: "orta", price: "85₺", description: "25cm" },
+    { name: "büyük", price: "105₺", description: "30cm" },
+  ];
+
   return (
-    <Form>
-      <FormGroup>
-        <h4>
-          Boyut Seçiniz <span className="yildiz">*</span>{" "}
-        </h4>
-        <FormGroup check>
-          <Label check>
-            <Input
-              name="radio1"
+    <div className="modern-form-section">
+      <h4 className="section-title">
+        <span role="img" aria-label="pizza">
+          🍕
+        </span>
+        Boyut Seçiniz <span className="yildiz">*</span>
+      </h4>
+      <div className="size-options">
+        {boyutlar.map((boyut) => (
+          <div key={boyut.name} className="size-card">
+            <input
               type="radio"
-              value="küçük"
-              checked={selectedSize === "küçük"}
+              id={`size-${boyut.name}`}
+              name="size"
+              value={boyut.name}
+              checked={selectedSize === boyut.name}
               onChange={handleSizeChange}
+              className="size-radio"
             />
-            Küçük
-          </Label>
-        </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input
-              name="radio1"
-              type="radio"
-              value="orta"
-              checked={selectedSize === "orta"}
-              onChange={handleSizeChange}
-            />
-            Orta
-          </Label>
-        </FormGroup>
-        <FormGroup check>
-          <Label check>
-            <Input
-              name="radio1"
-              type="radio"
-              value="büyük"
-              checked={selectedSize === "büyük"}
-              onChange={handleSizeChange}
-            />
-            Büyük
-          </Label>
-        </FormGroup>
-      </FormGroup>
-    </Form>
+            <label htmlFor={`size-${boyut.name}`} className="size-label">
+              <div className="size-info">
+                <span className="size-name">{boyut.name.toUpperCase()}</span>
+                <span className="size-price">{boyut.price}</span>
+                <span style={{ fontSize: "0.8rem", opacity: 0.7 }}>
+                  {boyut.description}
+                </span>
+              </div>
+            </label>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

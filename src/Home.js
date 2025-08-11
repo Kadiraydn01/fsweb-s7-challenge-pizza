@@ -84,35 +84,29 @@ const Home = () => {
       </div>
 
       <div className="orta-kisim">
-        <div className="sol-taraf">
-          <div
-            className="ilk-resim"
-            style={{
-              backgroundImage: `url(${resim2})`,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "contain",
-              height: 416,
-              width: 520,
-            }}
-            data-aos="fade-right"
-          >
-            <h1>
-              Özel <br /> Lezzetus
-            </h1>
-            <p>Position Absolute Acı Burger</p>
-            <button className="siparis" onClick={handleAciktimClick}>
-              SİPARİŞ VER
-            </button>
+        <div className="front">
+          <div className="sol-taraf">
+            <div
+              className="ilk-resim"
+              style={{
+                backgroundImage: `url(${resim2})`,
+              }}
+              data-aos="fade-right"
+            >
+              <h1>
+                Özel <br /> Lezzetus
+              </h1>
+              <p>Position Absolute Acı Burger</p>
+              <button className="siparis" onClick={handleAciktimClick}>
+                SİPARİŞ VER
+              </button>
+            </div>
           </div>
           <div className="sag-taraf">
             <div
               className="ikinci-resim"
               style={{
                 backgroundImage: `url(${resim3})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "contain",
-                height: 200,
-                width: 600,
               }}
               data-aos="fade-left"
             >
@@ -127,10 +121,6 @@ const Home = () => {
               className="ücüncü-resim"
               style={{
                 backgroundImage: `url(${resim4})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "contain",
-                height: 200,
-                width: 600,
               }}
               data-aos="fade-left"
               data-aos-delay="200"

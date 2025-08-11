@@ -1,3 +1,4 @@
+/* Mobile First Home Design */
 .home-div {
   display: flex;
   flex-direction: column;
@@ -5,10 +6,12 @@
   background: linear-gradient(135deg, #ce2829 0%, #b91c1c 100%);
   position: relative;
   overflow: hidden;
+  padding: 2rem 1rem 0;
+  min-height: 60vh;
 }
 
 .home-div::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -22,40 +25,52 @@
   color: white;
   font-family: "Barlow", sans-serif;
   font-weight: 600;
-  font-size: 48px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   z-index: 1;
   position: relative;
+  margin: 1rem 0;
+  line-height: 1.2;
 }
 
 .highlight {
-  color: #FDC913;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  color: #fdc913;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .home-div > h3 {
   color: white;
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-family: "Quattrocento", serif;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   z-index: 1;
   position: relative;
+  margin: 1rem 0;
 }
 
 .home-div > img {
-  max-width: 100%;
-  height: 369px;
-  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.2));
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  max-height: none;
+  object-fit: cover;
+  object-position: center bottom;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.3));
+  margin: 1rem 0 0;
+  border-radius: 0 0 50% 50%;
+  position: relative;
+  z-index: 1;
 }
 
 .modern-btn {
-  background: linear-gradient(45deg, #FDC913, #f59e0b);
+  background: linear-gradient(45deg, #fdc913, #f59e0b);
   border: none;
   border-radius: 50px;
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   margin: 20px auto;
-  padding: 15px 30px;
-  font-size: 1.2rem;
+  padding: 12px 24px;
+  font-size: 1rem;
   font-weight: bold;
   color: #1f2937;
   cursor: pointer;
@@ -72,40 +87,235 @@
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(253, 201, 19, 0.4);
 }
+
 .siparis {
-  width: 20%;
-  height: 38px;
-  border-radius: 35%;
-  margin-left: 5%;
-  margin-top: 2%;
+  width: 80%;
+  max-width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  margin: 1rem auto;
   background-color: white;
   color: #ce2829;
   border: solid 2px white;
   overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
 }
+
+/* Icons Grid Mobile */
 .ikons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 2rem;
-  margin: 3rem 10%;
-  padding: 2rem 0;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 1rem;
+  padding: 1rem 0;
 }
 
 .icon-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
   background: white;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  cursor: pointer;
 }
 
 .icon-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.icon-item svg {
+  font-size: 2rem;
+  color: #ce2829;
+  margin-bottom: 1rem;
+}
+
+.icon-item h4 {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin: 0;
+  text-align: center;
+}
+
+/* Menu Grid Mobile */
+.yemek-menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 1rem;
+  padding: 1rem 0;
+}
+
+.menu-item {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.menu-item-content {
+  padding: 1rem;
+}
+
+.menu-item h3 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+}
+
+.menu-item p {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin: 0 0 1rem 0;
+}
+
+.menu-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ce2829;
+}
+
+/* Tablet Responsive (768px and up) */
+@media (min-width: 768px) {
+  .home-div {
+    padding: 3rem 2rem 0;
+    min-height: 65vh;
+  }
+
+  .home-div > h1 {
+    font-size: 2.8rem;
+  }
+
+  .home-div > h3 {
+    font-size: 1.6rem;
+  }
+
+  .home-div > img {
+    min-height: 400px;
+    max-height: none;
+    margin: 2rem 0 0;
+  }
+
+  .modern-btn {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    max-width: 250px;
+  }
+
+  .siparis {
+    width: 60%;
+    max-width: 180px;
+  }
+
+  .ikons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 3rem 2rem;
+  }
+
+  .yemek-menu {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 3rem 2rem;
+  }
+
+  .menu-item img {
+    height: 220px;
+  }
+}
+
+/* Desktop Responsive (992px and up) */
+@media (min-width: 992px) {
+  .home-div {
+    padding: 4rem 3rem 0;
+    min-height: 70vh;
+  }
+
+  .home-div > h1 {
+    font-size: 3.5rem;
+  }
+
+  .home-div > h3 {
+    font-size: 1.8rem;
+  }
+
+  .home-div > img {
+    min-height: 500px;
+    max-height: none;
+    margin: 2rem 0 0;
+    border-radius: 0 0 60% 60%;
+  }
+
+  .modern-btn {
+    font-size: 1.2rem;
+    max-width: 200px;
+  }
+
+  .siparis {
+    width: 40%;
+    max-width: 160px;
+  }
+
+  .ikons {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 5%;
+  }
+
+  .yemek-menu {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 3rem 5%;
+  }
+}
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+  .home-div > h1 {
+    font-size: 48px;
+  }
+
+  .home-div > h3 {
+    font-size: 2rem;
+  }
+
+  .siparis {
+    width: 20%;
+  }
+
+  .ikons {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin: 3rem 10%;
+  }
+
+  .yemek-menu {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 3rem 10%;
+  }
+}
+
+/* Existing styles continue here */
+.icon-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .icon-item img {
@@ -120,56 +330,161 @@
   margin: 0;
   font-size: 1rem;
 }
+/* Özel Lezzet Kartları - Mobile First Responsive */
 .front {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
 }
+
 .sol-taraf {
-  margin-left: 10%;
-  background-color: beige;
+  background-color: #f5f5dc;
+  padding: 1rem;
+  border-radius: 12px;
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 .ilk-resim {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border-radius: 7px;
-  margin-top: 7%;
+  border-radius: 12px;
+  width: 100%;
+  min-height: 250px;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
 }
-.ilk-resim > p {
-  margin-left: 2.1em;
-  color: white;
-}
-.ilk-resim > h1 {
-  margin-left: 2rem;
 
-  color: white;
+.ilk-resim::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  pointer-events: none;
 }
+
+.ilk-resim > * {
+  position: relative;
+  z-index: 2;
+}
+
+.ilk-resim > p {
+  margin: 0.5rem 0 1rem;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.ilk-resim > h1 {
+  margin: 0 0 0.5rem;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  line-height: 1.2;
+}
+
 .sag-taraf {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-.ikinci-resim {
-  border-radius: 7px;
-  margin-top: 16%;
-}
-.ikinci-resim > h3 {
-  color: white;
-  display: flex;
-  margin-left: 2rem;
   margin-top: 3rem;
+  width: 100%;
 }
+
+.ikinci-resim,
 .ücüncü-resim {
-  border-radius: 7px;
+  border-radius: 12px;
+  min-height: 200px;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  position: relative;
   overflow: hidden;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
+
+.ikinci-resim::before,
+.ücüncü-resim::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  pointer-events: none;
+}
+
+.ikinci-resim > *,
+.ücüncü-resim > * {
+  position: relative;
+  z-index: 2;
+}
+
+.ikinci-resim > h3,
 .ücüncü-resim > h3 {
-  margin-top: 3rem;
-  margin-left: 2rem;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  line-height: 1.3;
+}
+
+/* Sipariş Butonu Responsive */
+.siparis {
+  background: linear-gradient(135deg, #fdc913 0%, #f59e0b 100%);
+  color: #1f2937;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(253, 201, 19, 0.4);
+  margin-top: auto;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.siparis:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(253, 201, 19, 0.6);
+  background: linear-gradient(135deg, #f59e0b 0%, #fdc913 100%);
+}
+
+/* Yıldız Vurgu Stili */
+.yildiz {
+  color: #fdc913;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 .menu-aciklama {
   display: flex;
@@ -180,22 +495,54 @@
   margin-top: 50px;
   gap: -250px;
 }
+
+/* Kategori İkonları - Mobile First Responsive */
 .ikon-2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-left: 17%;
-  margin-right: 17%;
-  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  padding: 0 1rem;
+  margin-top: 2rem;
+  max-width: 100%;
 }
+
 .ikon-2 > button {
   display: flex;
+  flex-direction: column;
   background-color: white;
-  border-radius: 15px;
-  width: 130px;
+  border-radius: 12px;
+  border: none;
+  padding: 0.75rem 0.5rem;
   justify-content: center;
-  height: 70px;
   align-items: center;
+  min-height: 70px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ikon-2 > button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ikon-2 > button.siyah {
+  background-color: #1f2937;
+  color: white;
+}
+
+.ikon-2 > button img {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 0.25rem;
+}
+
+.ikon-2 > button p {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
 }
 
 .yemek-menu {
@@ -210,14 +557,14 @@
   background: white;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   position: relative;
 }
 
 .food-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .food-image-container {
@@ -240,7 +587,7 @@
   position: absolute;
   top: 15px;
   right: 15px;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -308,6 +655,163 @@
   align-items: center;
   gap: 1rem;
 }
+
+/* Tablet Responsive - 768px+ */
+@media (min-width: 768px) {
+  /* Özel Lezzet Kartları Tablet Layout */
+  .front {
+    padding: 1.5rem 3%;
+    gap: 1.5rem;
+  }
+
+  .sol-taraf {
+    padding: 1.5rem;
+  }
+
+  .ilk-resim {
+    min-height: 320px;
+    padding: 2rem;
+  }
+
+  .ilk-resim > h1 {
+    font-size: 2.2rem;
+  }
+
+  .ilk-resim > p {
+    font-size: 1rem;
+  }
+
+  .sag-taraf {
+    gap: 1.25rem;
+  }
+
+  .ikinci-resim,
+  .ücüncü-resim {
+    min-height: 160px;
+    padding: 1.75rem;
+  }
+
+  .ikinci-resim > h3,
+  .ücüncü-resim > h3 {
+    font-size: 1.4rem;
+  }
+
+  .siparis {
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+  }
+
+  .ikon-2 {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
+    padding: 0 2rem;
+    margin-top: 2rem;
+  }
+
+  .ikon-2 > button {
+    padding: 1rem 0.75rem;
+    min-height: 80px;
+  }
+
+  .ikon-2 > button img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0.5rem;
+  }
+
+  .ikon-2 > button p {
+    font-size: 0.875rem;
+  }
+}
+
+/* Desktop Responsive - 992px+ */
+@media (min-width: 992px) {
+  /* Özel Lezzet Kartları Desktop Layout */
+  .front {
+    flex-direction: row;
+    padding: 2rem 5%;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .sol-taraf {
+    flex: 2;
+    padding: 2rem;
+    margin: 0;
+  }
+
+  .ilk-resim {
+    min-height: 400px;
+    padding: 2.5rem;
+  }
+
+  .ilk-resim > h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .ilk-resim > p {
+    font-size: 1.1rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .sag-taraf {
+    flex: 1;
+    gap: 1.5rem;
+  }
+
+  .ikinci-resim,
+  .ücüncü-resim {
+    min-height: 180px;
+    padding: 2rem;
+  }
+
+  .ikinci-resim > h3,
+  .ücüncü-resim > h3 {
+    font-size: 1.5rem;
+  }
+
+  .siparis {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .ikon-2 {
+    padding: 0 10%;
+    margin-top: 3rem;
+  }
+
+  .ikon-2 > button {
+    padding: 1.25rem 1rem;
+    min-height: 90px;
+    border-radius: 15px;
+  }
+
+  .ikon-2 > button img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ikon-2 > button p {
+    font-size: 1rem;
+  }
+
+  .ikon-3 {
+    max-width: 450px;
+    padding: 2rem;
+  }
+
+  .ikon-3 h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .alt-ikon {
+    max-width: 320px;
+    gap: 0.75rem;
+  }
+}
 .ikon-1 {
   width: 30px;
   height: 30px;
@@ -320,15 +824,38 @@
   width: 420px;
 }
 .alt-ikon {
-  width: 285px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 285px;
 }
+
+.alt-ikon img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* Instagram Bölümü - Mobile First Responsive */
 .ikon-3 {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
 
-  width: 400px;
-  height: 260px;
+.ikon-3 h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #fdc913;
 }
 .orta-kisim {
   background-color: beige;

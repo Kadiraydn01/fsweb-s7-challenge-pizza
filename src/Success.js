@@ -29,16 +29,14 @@ const Success = (props) => {
           <FaCheckCircle />
         </div>
         <div className="success-baslik">
-          <h2 className="slide-up">
-            Teknolojik Yemekler
-          </h2>
+          <h2 className="slide-up">Teknolojik Yemekler</h2>
         </div>
         <div className="success-basari">
-          <p className="sari slide-up" style={{ animationDelay: '0.2s' }}>
-            <FaTruck style={{ marginRight: '10px' }} />
+          <p className="sari slide-up" style={{ animationDelay: "0.2s" }}>
+            <FaTruck style={{ marginRight: "10px" }} />
             lezzetin yolda
           </p>
-          <h1 className="slide-up" style={{ animationDelay: '0.4s' }}>
+          <h1 className="slide-up" style={{ animationDelay: "0.4s" }}>
             SİPARİŞİNİZ ALINDI!
           </h1>
         </div>
@@ -47,7 +45,7 @@ const Success = (props) => {
           <p>Position Absolute Acı Pizza</p>
         </div>
         <div className="order-status">
-          <FaClock style={{ marginRight: '10px' }} />
+          <FaClock style={{ marginRight: "10px" }} />
           <h3>Sipariş verisi bulunmuyor.</h3>
         </div>
       </div>
@@ -69,28 +67,30 @@ const Success = (props) => {
       </div>
 
       <div className="success-baslik">
-        <h2 className="slide-up">
-          Teknolojik Yemekler
-        </h2>
+        <h2 className="slide-up">Teknolojik Yemekler</h2>
       </div>
-      
+
       <div className="success-basari">
-        <p className="sari slide-up" style={{ animationDelay: '0.2s' }}>
-          <FaTruck style={{ marginRight: '10px' }} />
+        <p className="sari slide-up" style={{ animationDelay: "0.2s" }}>
+          <FaTruck style={{ marginRight: "10px" }} />
           lezzetin yolda
         </p>
-        <h1 className="slide-up" style={{ animationDelay: '0.4s' }}>
-          SİPARİŞİNİZ ALINDI! <FaHeart style={{ color: '#FDC913', marginLeft: '10px' }} />
+        <h1 className="slide-up" style={{ animationDelay: "0.4s" }}>
+          SİPARİŞİNİZ ALINDI!{" "}
+          <FaHeart style={{ color: "#FDC913", marginLeft: "10px" }} />
         </h1>
       </div>
-      
+
       <hr className="hr-class" />
-      
-      <div className="absol slide-up" style={{ animationDelay: '0.6s' }}>
+
+      <div className="absol slide-up" style={{ animationDelay: "0.6s" }}>
         <h3>Position Absolute Acı Pizza</h3>
       </div>
-      
-      <div className="delivery-status slide-up" style={{ animationDelay: '0.8s' }}>
+
+      <div
+        className="delivery-status slide-up"
+        style={{ animationDelay: "0.8s" }}
+      >
         <div className="status-item">
           <FaCheckCircle className="status-icon completed" />
           <span>Sipariş Alındı</span>
@@ -105,20 +105,28 @@ const Success = (props) => {
         </div>
       </div>
 
-      <div className="detay slide-up" style={{ animationDelay: '1s' }}>
-        <p>Ürün Boyutu: <strong>{selectedSize}</strong></p>
-        <p>Hamur Kalınlığı: <strong>{selectedHamur}</strong></p>
+      <div className="detay slide-up" style={{ animationDelay: "1s" }}>
+        <p>
+          Ürün Boyutu: <strong>{selectedSize}</strong>
+        </p>
+        <p>
+          Hamur Kalınlığı: <strong>{selectedHamur}</strong>
+        </p>
         <div className="extras">
           <p>Ekstra Malzemeler:</p>
           <ul className="ullar-1">
-            {ekstraMalzemeler && ekstraMalzemeler.map((malzeme, index) => (
-              <li key={index}>{malzeme}</li>
-            ))}
+            {ekstraMalzemeler &&
+              ekstraMalzemeler.map((malzeme, index) => (
+                <li key={index}>{malzeme}</li>
+              ))}
           </ul>
         </div>
       </div>
 
-      <div className="success-toplam slide-up" style={{ animationDelay: '1.2s' }}>
+      <div
+        className="success-toplam slide-up"
+        style={{ animationDelay: "1.2s" }}
+      >
         <div className="ortala">
           <div className="secim">
             <p>Ekstra Malzeme Toplamı:</p>
@@ -127,8 +135,12 @@ const Success = (props) => {
         </div>
         <div className="ortala">
           <div className="toplam">
-            <p><strong>Toplam Tutar:</strong></p>
-            <p><strong>{toplamFiyat}₺</strong></p>
+            <p>
+              <strong>Toplam Tutar:</strong>
+            </p>
+            <p>
+              <strong>{toplamFiyat}₺</strong>
+            </p>
           </div>
         </div>
       </div>

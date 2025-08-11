@@ -1,4 +1,5 @@
 import React from "react";
+import "./Footer.css";
 import resim8 from "../adv-aseets/insta/li-0.png";
 import resim9 from "../adv-aseets/insta/li-1.png";
 import resim10 from "../adv-aseets/insta/li-2.png";
@@ -52,7 +53,6 @@ const Footer1 = () => {
             <img src={resim8} alt=""></img>
             <img src={resim9} alt=""></img>
             <img src={resim10} alt=""></img>
-            <br />
             <img src={resim11} alt=""></img>
             <img src={resim12} alt=""></img>
             <img src={resim13} alt=""></img>
