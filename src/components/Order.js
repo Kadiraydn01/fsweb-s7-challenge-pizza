@@ -1,6 +1,8 @@
-import React, { useState } from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import React, { useState, useEffect } from "react";
+import { Form, FormGroup, Label, Input } from "reactstrap";
 import { useHistory } from "react-router-dom";
+import { FaPlus, FaMinus, FaShoppingCart, FaPizzaSlice } from "react-icons/fa";
+import { showSuccessToast, showWarningToast, showPizzaToast } from "./ToastNotification";
 import "../App.css";
 import resim0 from "../adv-aseets/adv-form-banner.png";
 import Footer1 from "./Footer";
@@ -9,6 +11,7 @@ const Order = () => {
   const [selectedSize, setSelectedSize] = useState("M");
   const [selectedHamur, setSelectedHamur] = useState("secimYapin");
   const [ekstraMalzemeler, setEkstraMalzemeler] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [boyutlar] = useState([
     { name: "M", price: 85.5 },
     { name: "L", price: 105.5 },
@@ -21,45 +24,77 @@ const Order = () => {
 
   const history = useHistory();
 
-  const handleOrder = () => {
-    const orderData = {
-      selectedSize,
-      selectedHamur,
-      ekstraMalzemeler,
-      ekstraMalzemeToplamFiyat,
-      toplamFiyat,
-    };
+  useEffect(() => {
+    showPizzaToast("Pizza sipariş formuna hoş geldiniz! 🍕");
+  }, []);
 
-    history.push({
-      pathname: "/success",
-      state: { orderData },
-    });
+  const handleOrder = () => {
+    if (selectedHamur === "secimYapin") {
+      showWarningToast("Lütfen hamur kalınlığını seçiniz!");
+      return;
+    }
+
+    if (ekstraMalzemeler.length < 4) {
+      showWarningToast("Lütfen en az 4 adet ekstra malzeme seçiniz!");
+      return;
+    }
+
+    setIsLoading(true);
+    showPizzaToast("Siparişiniz hazırlanıyor... 🔄");
+
+    // Simüle edilmiş yükleme
+    setTimeout(() => {
+      const orderData = {
+        selectedSize,
+        selectedHamur,
+        ekstraMalzemeler,
+        ekstraMalzemeToplamFiyat,
+        toplamFiyat,
+      };
+
+      showSuccessToast("Siparişiniz başarıyla oluşturuldu! ✅");
+      
+      history.push({
+        pathname: "/success",
+        state: { orderData },
+      });
+    }, 2000);
   };
 
   const handleIncrement = () => {
     setSayac(sayac + 1);
+    showPizzaToast(`Pizza adedi artırıldı: ${sayac + 1}`);
   };
 
   const handleDecrement = () => {
-    if (sayac > 0) {
+    if (sayac > 1) {
       setSayac(sayac - 1);
+      showPizzaToast(`Pizza adedi azaltıldı: ${sayac - 1}`);
+    } else {
+      showWarningToast("En az 1 adet pizza sipariş etmelisiniz!");
     }
   };
 
   const handleSizeChange = (event) => {
     setSelectedSize(event.target.value);
+    showPizzaToast(`Pizza boyutu seçildi: ${event.target.value}`);
   };
 
   const toggleEkstraMalzeme = (malzeme) => {
     if (ekstraMalzemeler.includes(malzeme)) {
       setEkstraMalzemeler(ekstraMalzemeler.filter((item) => item !== malzeme));
+      showWarningToast(`${malzeme} çıkarıldı`);
     } else {
       setEkstraMalzemeler([...ekstraMalzemeler, malzeme]);
+      showSuccessToast(`${malzeme} eklendi`);
     }
   };
 
   const handleHamurChange = (event) => {
     setSelectedHamur(event.target.value);
+    if (event.target.value !== "secimYapin") {
+      showPizzaToast(`Hamur kalınlığı seçildi: ${event.target.value}`);
+    }
   };
 
   const selectedSizeObject = boyutlar.find(
@@ -254,21 +289,32 @@ const Order = () => {
         </div>
       </div>
       <hr className="hr-class" />
-      <div className="sayac-2">
+      
+      <div className="sayac-2 fade-in" style={{ animationDelay: '0.6s' }}>
         <div>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <Button className="btn-1" onClick={handleDecrement}>
-              -
-            </Button>
-            <div className="sayac-3" style={{ fontSize: "32px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+            <button
+              className="modern-counter-btn"
+              onClick={handleDecrement}
+            >
+              <FaMinus />
+            </button>
+            
+            <div className="sayac-3 modern-counter">
+              <FaPizzaSlice style={{ marginRight: '10px', color: '#ce2829' }} />
               {sayac}
             </div>
-            <Button className="btn-2" onClick={handleIncrement}>
-              +
-            </Button>
+            
+            <button
+              className="modern-counter-btn"
+              onClick={handleIncrement}
+            >
+              <FaPlus />
+            </button>
           </div>
         </div>
-        <div className="siparis-toplam">
+        
+        <div className="siparis-toplam modern-order-summary slide-up" style={{ animationDelay: '0.8s' }}>
           <div className="toplam2">
             <h3>Sipariş Toplamı</h3>
           </div>
@@ -280,9 +326,29 @@ const Order = () => {
             <h4>Toplam </h4>
             <h4>{toplamFiyat.toFixed(2)} ₺</h4>
           </div>
-          <Button className="btn-sayac" onClick={handleOrder}>
-            SİPARİŞ VER
-          </Button>
+          
+          <button
+            className={`modern-order-btn ${isLoading ? 'loading' : ''}`}
+            onClick={handleOrder}
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <>
+                <div
+                  className="loading-spinner"
+                  style={{ marginRight: '10px', display: 'inline-block', fontSize: '1rem' }}
+                >
+                  ●
+                </div>
+                HAZıRLANıYOR...
+              </>
+            ) : (
+              <>
+                <FaShoppingCart style={{ marginRight: '10px' }} />
+                SİPARİŞ VER
+              </>
+            )}
+          </button>
           <br />
         </div>
       </div>
